@@ -42,6 +42,8 @@ function send_msg(){
 
 	xmlHttp.open( "GET", "server.php?send="+msg, false);
 
+	document.getElementById("msg").value = "";
+
 	xmlHttp.send();
 
 }

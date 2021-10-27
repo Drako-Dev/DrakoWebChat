@@ -16,9 +16,13 @@
 
 		$pdo = MySql::connect();
 
-		$pdo = $pdo->prepare("INSERT INTO chat (id, fromm, tom, content) VALUES (null, ?, ?, ?)");
+		$pdo = $pdo->prepare("INSERT INTO chat (id, fromm, tom, content, data) VALUES (null, ?, ?, ?, ?)");
 
-		$pdo->execute(array($_SESSION['user_id'], $_SESSION['chat'], @$_GET['send']));
+		date_default_timezone_set('America/Sao_Paulo');
+
+		$hora_atula = date('H:i:s');
+
+		$pdo->execute(array($_SESSION['user_id'], $_SESSION['chat'], @$_GET['send'], $hora_atula));
 
 	}
 
@@ -30,13 +34,17 @@
 
 	$pdo = $pdo->fetch();
 
+	$data_formated = explode(":", $pdo['data']);
+
+	$data_formated = $data_formated[0].":".$data_formated[1];
+
 	if($pdo['fromm'] == $_SESSION['user_id']){
 
-		echo "<div class='msg_from_me'><a>",$pdo['content'],"</a></div>";
+		echo "<div class='msg_from_me'><a>",$pdo['content']," <strong>$data_formated</strong></a></div>";
 
 	}else{
 
-		echo "<div class='msg_to_me'><a>",$pdo['content'],"</a></div>";
+		echo "<div class='msg_to_me'><a>",$pdo['content']," <strong>$data_formated</strong></a></div>";
 
 	}
 

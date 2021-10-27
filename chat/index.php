@@ -95,14 +95,18 @@
 						$pdo = $pdo->fetchAll();
 
 						foreach ($pdo as $key => $value) {
+
+							$data_formated = explode(":", $value['data']);
+
+							$data_formated = $data_formated[0].":".$data_formated[1];
 							
 							if($value['fromm'] == $_SESSION['user_id']){
 
-								echo "<div class='msg_from_me'><a>",$value['content'],"</a></div>";
+								echo "<div class='msg_from_me'><a>",$value['content']," <strong>$data_formated</strong></a></div>";
 
 							}else{
 
-							    echo "<div class='msg_to_me'><a>",$value['content'],"</a></div>";
+							    echo "<div class='msg_to_me'><a>",$value['content']," <strong>$data_formated</strong></a></div>";
 
 							}
 

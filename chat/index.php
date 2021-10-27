@@ -20,7 +20,6 @@
 	<meta charset="utf-8">
 	<title>DRAKO CHAT</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script type="text/javascript" src="app.js"></script>
 </head>
 <body>
 	<div class="content">
@@ -123,4 +122,5 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="app.js"></script>
 </html>

@@ -1,5 +1,15 @@
 var last_msg = check_last_msg();
 
+function set_scroll_max(){
+
+	const messages = document.querySelector('.messages');
+
+	var max_scroll_val = messages.scrollHeight;
+
+	messages.scroll(0, max_scroll_val);
+
+}
+
 function check_last_msg(){
 
 	var xmlHttp = new XMLHttpRequest();
@@ -49,3 +59,5 @@ function send_msg(){
 }
 
 setInterval(update_msgs, 250);
+
+set_scroll_max();

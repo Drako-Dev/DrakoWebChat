@@ -36,12 +36,14 @@
 	width: 100%;
 	height: 6vh;
 	margin-top: -10px;
+	float: right;
 }
 
 .msg_to_me{
 	width: 100%;
 	height: 6vh;
 	margin-top: -10px;
+	float: left;
 }
 
 .msg_from_me a{

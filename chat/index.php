@@ -62,6 +62,10 @@
 
 						@$f_ultima_msg = $pdo[0]['content'];
 
+						$data_formated = explode(":", $pdo[0]['data']);
+
+						$data_formated = $data_formated[0].":".$data_formated[1];
+
 						if($pdo[0]['fromm'] == $_SESSION['user_id']){
 
 							$f_ultima_msg = 'Você: '.$f_ultima_msg;
@@ -71,7 +75,7 @@
 						echo "<a href='server.php?chat=$f_id'>
 								<div class='one_chat'>
 									<div>",$f_name,"</div>
-									<div>",$f_ultima_msg,"</div>
+									<div>",$f_ultima_msg," <p>$data_formated</p></div>
 								</div>
 							</a>";
 

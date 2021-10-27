@@ -24,6 +24,11 @@
 	border-radius: 15px;
 }
 
+.one_chat p{
+	font-size: 12px;
+	float: right;
+}
+
 .messages{
 	width: 100%;
 	height: 75vh;

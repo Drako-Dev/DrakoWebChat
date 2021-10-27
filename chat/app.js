@@ -38,6 +38,8 @@ function update_msgs(){
 
 		messages.append(msg);
 
+		set_scroll_max();
+
 		last_msg = check_last_msg(); 
 
 	}

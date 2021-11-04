@@ -2,6 +2,8 @@
 
 	session_start();
 
+	ob_start();
+
 	include('includes/classes.php');
 
 	if(@$_GET['chat']){

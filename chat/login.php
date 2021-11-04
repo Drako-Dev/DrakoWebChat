@@ -17,6 +17,8 @@
 
 		session_start();
 
+		ob_start();
+
 		if(isset($_POST['user'])){
 
 			include('includes/classes.php');

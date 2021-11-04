@@ -1,9 +1,5 @@
 <?php
 
-	session_start();
-	
-	ob_start();
-
 	class MySql {
 
 		private static $pdo;
